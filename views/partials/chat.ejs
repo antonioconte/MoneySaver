@@ -1,0 +1,47 @@
+<div class="modal fade">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-content-sfondo ">
+
+      <div class="modal-body">
+        <div class="box box-warning direct-chat direct-chat-warning">
+          <div class="box-header with-border">
+            <h3 class="box-title">Direct Chat</h3>
+            <div class="box-tools pull-right">
+            <button ng-click="reading_msg=false" type="button" class="btn btn-box-tool" data-dismiss="modal"><i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="direct-chat-messages">
+              <!-- DESTINATARIO -->
+              <div ng-repeat="m in msg">
+
+              <div class="direct-chat-msg" ng-class="[m.mitt]">
+                <div class="direct-chat-info clearfix">
+                  <span class="direct-chat-name pull-left">{{m.nome_mitt}}</span>
+                  <span class="direct-chat-timestamp pull-right">{{m.data}}</span>
+                </div>
+                <!-- /.direct-chat-info -->
+                <div class="direct-chat-text">
+                {{ m.text }}
+                </div>
+              </div>
+            </div>
+
+            </div>
+          </div>
+          <div class="box-footer">
+            <form>
+              <div class="input-group">
+                <input type="text" name="message" ng-model='text_to_send' placeholder="Type Message ..." class="form-control">
+                    <span class="input-group-btn">
+                      <button type="button" ng-click="send()" class="btn btn-warning btn-flat">Send</button>
+                    </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

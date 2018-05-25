@@ -1,0 +1,114 @@
+<% include ../partials/header %>
+  <section class="content-header">
+    <h1>
+    </h1>
+  </section>
+
+  <section class="content">
+    <% if(success_msg != "") { %>
+      <div class="alert alert-success">
+        <%= success_msg %>
+      </div>
+    <% } %>
+    <div class="row">
+
+   <div class="col-md-3">
+      <!-- Profile Image -->
+      <div class="box box-primary">
+         <div class="box-body box-profile">
+            <img class="profile-user-img img-responsive img-circle" src="/dist/img_profile/<%= user.img %>" alt="User profile picture">
+            <h3 class="profile-username text-center"><%= user.nome %></h3>
+            <p class="text-muted text-center"><%= user.prof %></p>
+            <ul class="list-group list-group-unbordered">
+               <li class="list-group-item">
+                  <b>Età</b> <a class="pull-right"><%= user.eta %></a>
+               </li>
+               <li class="list-group-item">
+                  <b>Email</b> <a class="pull-right"><%= user.email %></a>
+               </li>
+            </ul>
+            <% if(canEdit){ %>
+            <a href="/edit" class="btn btn-primary btn-block">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <b>Edit</b>
+            </a>
+            <a href="/post/new" class="btn btn-danger btn-block">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <b>New Post</b>
+            </a>
+            <% } %>
+            <% if(!canEdit){ %>
+              <button ng-click="contact(<%= user.id %>, '<%= user.nome %>')" href="#" class="btn btn-success btn-block">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <b>Contact</b>
+              </button>
+            <% } %>
+
+
+         </div>
+         <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+      <!-- About Me Box -->
+      <div class="box box-primary">
+         <div class="box-header with-border">
+            <h3 class="box-title">About Me</h3>
+         </div>
+         <!-- /.box-header -->
+         <div class="box-body">
+            <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+            <p class="text-muted">
+               B.S. in Computer Science from the University of Tennessee at Knoxville
+            </p>
+            <hr>
+            <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+            <p class="text-muted">Malibu, California</p>
+            <hr>
+            <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+            <p>
+               <span class="label label-danger">UI Design</span>
+               <span class="label label-success">Coding</span>
+               <span class="label label-info">Javascript</span>
+               <span class="label label-warning">PHP</span>
+               <span class="label label-primary">Node.js</span>
+            </p>
+            <hr>
+            <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+         </div>
+         <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+   </div>
+   <!-- /.col -->
+   <div class="col-md-9">
+
+      <div class="nav-tabs-custom">
+         <ul class="nav nav-tabs">
+            <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false">Timeline</a></li>
+         </ul>
+         <div class="tab-content">
+          <div class="tab-pane active" id="timeline">
+               <!-- The timeline -->
+               <%
+               if(post.length == 0 ){ %>
+                 <div class="alert alert-info">
+                   Nessun post trovato
+                 </div>
+               <% } %>
+               <ul class="timeline timeline-inverse">
+                <% for(var i=0; i < post.length; i++){
+                   var item = post[i];  %>
+                <% include ../partials/post/normal %>
+                <% } %>
+               </ul>
+            </div>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+  </section>
+
+<% include ../partials/footer %>

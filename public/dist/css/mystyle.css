@@ -1,0 +1,27 @@
+.control-sidebar{
+  margin-top: 1%;
+}
+
+
+.hide{
+  display: none;
+}
+
+.chat-my{
+  z-index: 1000;
+   margin-left: 60%;
+   position: fixed;
+   float: right;
+}
+
+.modal-content-sfondo{
+  background: none;
+}
+
+.direct-chat-text{
+      margin: 5px 0 0 13px;
+}
+
+.right .direct-chat-text {
+    margin-right: 13px;
+  }

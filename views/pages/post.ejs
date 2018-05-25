@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<section class="content-header">
+   <h1>
+   </h1>
+</section>
+<section class="content">
+   <div class="row">
+
+      <div class="col-md-12">
+         <ul class="timeline">
+
+           <li ng-repeat="p in socket_new_post">
+              <i class="fa fa-envelope bg-blue"></i>
+              <div class="timeline-item">
+                 <span class="time"><span class="label label-success">NEW</span></span>
+                 <h3 class="timeline-header"><a href="/profile/{{p.id}}">{{ p.user }}</a> ha pubblicato</h3>
+                 <div class="timeline-body">
+                 {{ p.msg}}
+                 </div>
+                 <div class="timeline-footer">
+                 </div>
+              </div>
+           </li>
+
+
+             <% for(var i=0; i < post.length; i++){
+               var item = post[i];  %>
+            <% include ../partials/post/normal %>
+            <% } %>
+
+            <li>
+               <i class="fa fa-clock-o bg-gray"></i>
+            </li>
+         </ul>
+      </div>
+   </div>
+</section>
+
+<% include ../partials/footer %>

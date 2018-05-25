@@ -1,0 +1,34 @@
+ <% include ../partials/header %>
+  <section class="content-header">
+    <h1> All Users  </h1>
+  </section>
+
+  <section class="content">
+
+  <% for(var i = 0; i<users.length; i++){ %>
+        <div class="col-md-3">
+           <!-- Profile Image -->
+           <div class="box box-primary">
+              <div class="box-body box-profile">
+                 <img class="profile-user-img img-responsive img-circle" src="/dist/img_profile/<%= users[i].img %>" alt="User profile picture">
+                 <h3 class="profile-username text-center">  <%= users[i].nome %></h3>
+                 <!-- <p class="text-muted text-center">  <%= users[i].prof %></p> -->
+                 <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                       <b>Età</b> <a class="pull-right">  <%= users[i].eta %></a>
+                    </li>
+                    <li class="list-group-item">
+                       <b>Email</b> <a class="pull-right">  <%= users[i].email %></a>
+                    </li>
+                 </ul>
+                 <a href="/profile/<%= users[i].id %>" class="btn btn-primary btn-block"><b>More</b></a>
+              </div>
+              <!-- /.box-body -->
+           </div>
+           <!-- /.box -->
+        </div>
+    <% } %>
+
+  </section>
+
+<% include ../partials/footer %>

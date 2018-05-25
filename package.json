@@ -1,0 +1,31 @@
+{
+  "name": "ejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "Antonio Conteduca",
+  "license": "ISC",
+  "dependencies": {
+    "angular-chart.js": "^1.1.1",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "ejs": "*",
+    "express": "*",
+    "express-messages": "*",
+    "express-validator": "*",
+    "fs": "*",
+    "http": "*",
+    "ip": "*",
+    "multer": "*",
+    "path": "*",
+    "socket.io": "*",
+    "sqlite3": "*",
+    "twilio": "^2.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/firstappbyanto.git"
+  }
+}
